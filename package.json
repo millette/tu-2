@@ -1,0 +1,38 @@
+{
+  "name": "tu",
+  "version": "0.0.0",
+  "description": "Theme-UI stuff...",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "clean": "rm -fr out .next",
+    "export": "next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/millette/tu.git"
+  },
+  "license": "AGPL-3.0",
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "engines": {
+    "node": ">= 10.16.3"
+  },
+  "bugs": {
+    "url": "https://github.com/millette/tu/issues"
+  },
+  "homepage": "https://github.com/millette/tu#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.21",
+    "@next/mdx": "^9.0.8",
+    "next": "^9.0.8",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "theme-ui": "^0.2.43"
+  }
+}
