@@ -1,3 +1,5 @@
+// npm
+import Link from 'next/link'
 import { Styled } from 'theme-ui'
 import {
   // ThemeCard,
@@ -22,6 +24,8 @@ ThemeCard:
 export default () =>
   <>
     <Styled.h1>Style Guide</Styled.h1>
+    <p>go <Link href="/"><a>Home</a></Link></p>
+    <p>go <Link href="/p2"><a>Page 2</a></Link></p>
 
     ColorPalette:
     <ColorPalette />
