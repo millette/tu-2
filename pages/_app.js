@@ -5,7 +5,7 @@ import App from "next/app"
 import Link from 'next/link'
 // import { MDXProvider } from "@mdx-js/react"
 // import { jsx, useColorMode, ThemeProvider, Styled, ColorMode, Flex, Box, Layout, Header, Main, Container, Footer, InitializeColorMode } from "theme-ui"
-import { jsx, InitializeColorMode, ThemeProvider, Styled, ColorMode, Layout } from "theme-ui"
+import { jsx, ThemeProvider, Styled, ColorMode, Layout } from "theme-ui"
 import bestContrast from 'get-best-contrast-color'
 
 import { dark as theme } from "@theme-ui/presets"
@@ -40,7 +40,6 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme} components={components}>
-        <InitializeColorMode />
         <ColorMode />
         <Styled.root>
           <Layout>
