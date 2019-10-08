@@ -29,8 +29,8 @@
   "homepage": "https://github.com/millette/tu#readme",
   "dependencies": {
     "@emotion/core": "^10.0.21",
-    "@mdx-js/loader": "^1.5.0",
-    "@mdx-js/react": "^1.5.0",
+    "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
     "@next/mdx": "^9.1.1",
     "@theme-ui/presets": "^0.2.42",
     "get-best-contrast-color": "^0.3.1",
