@@ -16,6 +16,7 @@ export default (props) => {
       </button>
 
       <p>go <Link href="/"><a>Home</a></Link></p>
+      <p>go <Link href="/p3"><a>Page 3</a></Link></p>
       <button sx={{color: 'white', bg: 'primary'}}>A button</button>
     </div>
   )
