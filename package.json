@@ -8,6 +8,7 @@
     "build": "next build",
     "clean": "rm -fr out .next",
     "export": "next export",
+    "healthier": "healthier",
     "start": "next start"
   },
   "repository": {
@@ -26,6 +27,21 @@
   "bugs": {
     "url": "https://github.com/millette/tu/issues"
   },
+  "healthier": {
+    "parser": "babel-eslint",
+    "globals": [
+      "fetch"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
+  },
   "homepage": "https://github.com/millette/tu#readme",
   "dependencies": {
     "@emotion/core": "^10.0.21",
@@ -38,5 +54,9 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "theme-ui": "^0.2.43"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "healthier": "^3.2.0"
   }
 }
