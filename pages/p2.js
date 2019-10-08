@@ -2,8 +2,7 @@
 
 // npm
 import Link from 'next/link'
-import { jsx } from 'theme-ui'
-import { useColorMode } from 'theme-ui'
+import { jsx, useColorMode } from 'theme-ui'
 
 export default (props) => {
   const [colorMode, setColorMode] = useColorMode()
