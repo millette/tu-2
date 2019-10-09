@@ -5,7 +5,8 @@ import App from "next/app"
 import Link from 'next/link'
 // import { MDXProvider } from "@mdx-js/react"
 // import { jsx, useColorMode, ThemeProvider, Styled, ColorMode, Flex, Box, Layout, Header, Main, Container, Footer, InitializeColorMode } from "theme-ui"
-import { jsx, ThemeProvider, Styled, ColorMode, Layout } from "theme-ui"
+// import { jsx, ThemeProvider, Styled, ColorMode, Layout } from "theme-ui"
+import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
 import * as themes from "@theme-ui/presets"
 
 // self
@@ -28,15 +29,16 @@ class MyApp extends App {
   // <Component {...pageProps} changeTheme={this.setState.bind(this)} />
   // {this.state.selectedTheme}
 
+// <Layout>
+// </Layout>
+
 render() {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={themes.bulma} components={components}>
         <ColorMode />
         <Styled.root>
-          <Layout>
               <Component {...pageProps} />
-          </Layout>
         </Styled.root>
       </ThemeProvider>
     )
