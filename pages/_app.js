@@ -10,6 +10,8 @@ import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
 import * as themes from "@theme-ui/presets"
 
 // self
+import darkenTheme from '../darken-theme'
+
 // import theme from '../theme'
 
 // const components = { Flex, Box, Layout, Header, Main, Container, Footer }
@@ -25,7 +27,7 @@ const components = {
 
 
 class MyApp extends App {
-  // state = { selectedTheme: 'base' }
+  state = { selectedTheme: 'base' }
   // <Component {...pageProps} changeTheme={this.setState.bind(this)} />
   // {this.state.selectedTheme}
 
@@ -35,10 +37,10 @@ class MyApp extends App {
 render() {
     const { Component, pageProps } = this.props
     return (
-      <ThemeProvider theme={themes.bulma} components={components}>
+      <ThemeProvider theme={darkenTheme(themes[this.state.selectedTheme])} components={components}>
         <ColorMode />
         <Styled.root>
-              <Component {...pageProps} />
+          <Component {...pageProps} selectedTheme={this.state.selectedTheme} themes={Object.keys(themes)} changeTheme={this.setState.bind(this)} />
         </Styled.root>
       </ThemeProvider>
     )

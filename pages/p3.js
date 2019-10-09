@@ -11,20 +11,15 @@ import {
 import LightSwitch from '../components/light-switch'
 import StyleGuide from '../components/style-guide.mdx'
 
-export default () => {
-  /*
-  const clicky = (ev) => {
-    console.log('CLICKY', ev, typeof props.changeTheme)
-    props.changeTheme({selectedTheme: 'bulma'})
-  }
-  */
-
-  // <button onClick={clicky}>Set Bulma!</button>
+export default ({ selectedTheme, changeTheme, themes }) => {
+  const change = (ev) => changeTheme({ selectedTheme: ev.target.value })
 
   return (
-
     <div>
-      <Styled.h1>Style Guide</Styled.h1>
+      <Styled.h1>Style Guide ({selectedTheme})</Styled.h1>
+      <select onChange={change} value={selectedTheme}>
+        {themes.map((t) => <option key={t}>{t}</option>)}
+      </select>
       <p>go <Link href="/"><a>Home</a></Link></p>
       <p>go <Link href="/p2"><a>Page 2</a></Link></p>
       <Flex>
