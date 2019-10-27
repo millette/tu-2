@@ -6,8 +6,8 @@ import Link from "next/link"
 import { jsx, useThemeUI, Styled } from "theme-ui"
 
 // self
-import Editor from "../components/ed-2"
-import DemoModal from "../components/demo-modal"
+// import Editor from "../components/ed-2"
+import EditorModal from "../components/ed-modal"
 
 export default ({ updateTheme }) => {
   const [shown, showModal] = useState(false)
@@ -37,8 +37,12 @@ export default ({ updateTheme }) => {
       <button onClick={() => showModal(!shown)}>
         {shown ? "Hide" : "Show"} Modal
       </button>
-      <DemoModal shown={shown} close={() => showModal(false)} />
-      <Editor onChange={updateTheme} json={theme} />
+      <EditorModal
+        shown={shown}
+        close={() => showModal(false)}
+        onChange={updateTheme}
+        json={theme}
+      />
       <button sx={{ color: "white", bg: "primary" }}>A button</button>
     </div>
   )
