@@ -3,6 +3,7 @@
 // npm
 import App from "next/app"
 import Link from "next/link"
+import Head from "next/head"
 import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
 import { bootstrap as theme } from "@theme-ui/presets"
 
@@ -47,6 +48,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider components={components} theme={this.state.theme}>
+        <Head>
+          <link rel="stylesheet" href="/css/editor.min.css" />
+        </Head>
         <ColorMode />
         <Styled.root>
           <Component {...pageProps} updateTheme={this.setTheme} />
