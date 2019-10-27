@@ -1,7 +1,12 @@
 "use strict"
 
 const withMDX = require("@next/mdx")()
-
-module.exports = withMDX({
-  pageExtensions: ["js", "mdx"],
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 })
+
+module.exports = withBundleAnalyzer(
+  withMDX({
+    pageExtensions: ["js", "mdx"],
+  })
+)
