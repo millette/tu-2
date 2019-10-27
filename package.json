@@ -68,18 +68,18 @@
     "@theme-ui/style-guide": "^0.2.44",
     "@zeit/next-css": "^1.0.1",
     "get-best-contrast-color": "^0.3.1",
-    "husky": "^2.7.0",
-    "jsoneditor": "^7.2.1",
     "jsoneditor-react": "^2.0.0",
-    "lint-staged": "^9.4.2",
     "next": "^9.1.1",
-    "prettier": "^1.18.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "theme-ui": "^0.2.44"
+    "theme-ui": "^0.2.44",
+    "url-loader": "^2.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "healthier": "^3.2.0"
+    "healthier": "^3.2.0",
+    "husky": "^2.7.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2"
   }
 }
