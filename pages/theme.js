@@ -15,12 +15,6 @@ export default ({ updateTheme } ) => {
     updateTheme(theme)
   }
 
-  /*
-  const handleChange = (theme) => {
-    // console.log('CHANGE', ev)
-  }
-  */
-
   return (
     <div>
       <Styled.h1>Page 2!!</Styled.h1>
