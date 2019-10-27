@@ -1,7 +1,6 @@
 /** @jsx jsx */
 
 // npm
-// import React from "react"
 import App from "next/app"
 import Link from 'next/link'
 import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
