@@ -6,7 +6,7 @@ import Link from "next/link"
 import { jsx, useThemeUI, Styled } from "theme-ui"
 
 // self
-import Editor from "../components/ed"
+import Editor from "../components/ed-2"
 import DemoModal from "../components/demo-modal"
 
 export default ({ updateTheme }) => {
