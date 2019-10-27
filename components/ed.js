@@ -1,17 +1,24 @@
+/** @jsx jsx */
+
 // npm
 import { useState } from "react"
-import { Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
+
+const preStyle = {
+  maxWidth: "25rem",
+  whiteSpace: "pre-wrap",
+}
 
 const Editor = ({ indent = "  ", onChange, json }) => {
   const [ed, setEd] = useState(true)
 
   const save = (ev) => {
-    if (ev.key === "Tab") {
+    if (ev.shiftKey && ev.key === "Tab") {
       ev.preventDefault()
       document.execCommand("insertText", false, indent)
       return
     }
-    if (ev.ctrlKey && ev.key !== "Enter") {
+    if (ev.ctrlKey && ev.key === "Enter") {
       try {
         onChange(JSON.parse(ev.target.innerText.replace(/[\n\s]/g, "")))
         setEd(false)
@@ -23,10 +30,11 @@ const Editor = ({ indent = "  ", onChange, json }) => {
 
   return (
     <Styled.pre
-      title="CTRL-Enter to save"
-      style={{ maxWidth: "25rem" }}
+      suppressContentEditableWarning={true}
+      title="CTRL-Enter to save; SHIFT-Tab to insert spaces"
       onKeyDown={save}
       contentEditable={ed}
+      sx={preStyle}
     >
       {JSON.stringify(json, null, indent)}
     </Styled.pre>
