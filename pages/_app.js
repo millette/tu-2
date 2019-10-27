@@ -14,23 +14,27 @@ const components = {
   ),
 }
 
+/*
 const sx = {
   div: {
-    color: "background",
-    bg: "primary",
+    // bg: "black",
+    // color: "white",
+    // color: "background",
+    // bg: "primary",
     position: "absolute",
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
-    margin: "auto",
-    width: "300px",
-    height: "300px",
+    // margin: "auto",
+    width: "100vw",
+    height: "100vh",
     boxShadow: "0 5px 10px 2px rgba(195,192,192,.5)",
-    padding: "20px",
-    textAlign: "center",
+    // padding: "20px",
+    // textAlign: "center",
   },
 }
+*/
 
 class MyApp extends App {
   constructor(props) {
@@ -46,7 +50,7 @@ class MyApp extends App {
         <ColorMode />
         <Styled.root>
           <Component {...pageProps} updateTheme={this.setTheme} />
-          <div sx={sx} id="modal" />
+          <div id="modal" />
         </Styled.root>
       </ThemeProvider>
     )
