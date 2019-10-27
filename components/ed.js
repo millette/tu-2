@@ -1,6 +1,6 @@
 // npm
-import { useState } from 'react'
-import { Styled } from 'theme-ui'
+import { useState } from "react"
+import { Styled } from "theme-ui"
 
 const Editor = ({ indent = "  ", onChange, json }) => {
   const [ed, setEd] = useState(true)
@@ -11,9 +11,9 @@ const Editor = ({ indent = "  ", onChange, json }) => {
       document.execCommand("insertText", false, indent)
       return
     }
-    if (ev.ctrlKey && (ev.key !== "Enter")) {
+    if (ev.ctrlKey && ev.key !== "Enter") {
       try {
-        onChange(JSON.parse(ev.target.innerText.replace(/[\n\s]/g, '')))
+        onChange(JSON.parse(ev.target.innerText.replace(/[\n\s]/g, "")))
         setEd(false)
       } catch (e) {
         console.error(e) // e instanceof SyntaxError
@@ -22,7 +22,14 @@ const Editor = ({ indent = "  ", onChange, json }) => {
   }
 
   return (
-    <Styled.pre title="CTRL-Enter to save" style={{ maxWidth: "25rem" }} onKeyDown={save} contentEditable={ed}>{JSON.stringify(json, null, indent)}</Styled.pre>
+    <Styled.pre
+      title="CTRL-Enter to save"
+      style={{ maxWidth: "25rem" }}
+      onKeyDown={save}
+      contentEditable={ed}
+    >
+      {JSON.stringify(json, null, indent)}
+    </Styled.pre>
   )
 }
 
