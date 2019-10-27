@@ -8,7 +8,7 @@ import { bootstrap as theme } from "@theme-ui/presets"
 
 const components = {
   a: ({ children, href }) => (
-    <Link href={href}>
+    <Link href={href} passHref>
       <Styled.a>{children}</Styled.a>
     </Link>
   ),

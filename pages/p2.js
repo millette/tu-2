@@ -2,29 +2,29 @@
 
 // npm
 import Link from "next/link"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 export default () => (
   <div>
-    <h1>Page 2!!</h1>
-    <p>
+    <Styled.h1>Page 2!!</Styled.h1>
+    <Styled.p>
       go{" "}
-      <Link href="/">
-        <a>Home</a>
+      <Link href="/" passHref>
+        <Styled.a>Home</Styled.a>
       </Link>
-    </p>
-    <p>
+    </Styled.p>
+    <Styled.p>
       go{" "}
-      <Link href="/theme">
-        <a>Theme</a>
+      <Link href="/theme" passHref>
+        <Styled.a>Theme</Styled.a>
       </Link>
-    </p>
-    <p>
+    </Styled.p>
+    <Styled.p>
       go{" "}
-      <Link href="/p3">
-        <a>Page 3</a>
+      <Link href="/p3" passHref>
+        <Styled.a>Page 3</Styled.a>
       </Link>
-    </p>
+    </Styled.p>
     <button sx={{ color: "white", bg: "primary" }}>A button</button>
   </div>
 )

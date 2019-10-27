@@ -17,23 +17,23 @@ export default ({ updateTheme }) => {
 
   return (
     <div>
-      <Styled.h1>Page 2!!</Styled.h1>
+      <Styled.h1>Theme page</Styled.h1>
       <Styled.p>
         go{" "}
-        <Link href="/">
-          <a>Home</a>
+        <Link href="/" passHref>
+          <Styled.a>Home</Styled.a>
         </Link>
       </Styled.p>
       <Styled.p>
         go{" "}
-        <Link href="/p3">
-          <a>Page 3</a>
+        <Link href="/p3" passHref>
+          <Styled.a>Page 3</Styled.a>
         </Link>
       </Styled.p>
       <Styled.p>
         go{" "}
-        <Link href="/p4">
-          <a>Page 4</a>
+        <Link href="/p4" passHref>
+          <Styled.a>Page 4</Styled.a>
         </Link>
       </Styled.p>
       <button onClick={clicky}>Clicky</button>

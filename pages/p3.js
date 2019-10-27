@@ -13,20 +13,20 @@ export default () => (
     <Styled.h1>Style Guide</Styled.h1>
     <p>
       go{" "}
-      <Link href="/">
-        <a>Home</a>
+      <Link href="/" passHref>
+        <Styled.a>Home</Styled.a>
       </Link>
     </p>
     <p>
       go{" "}
-      <Link href="/theme">
-        <a>Theme</a>
+      <Link href="/theme" passHref>
+        <Styled.a>Theme</Styled.a>
       </Link>
     </p>
     <p>
       go{" "}
-      <Link href="/p2">
-        <a>Page 2</a>
+      <Link href="/p2" passHref>
+        <Styled.a>Page 2</Styled.a>
       </Link>
     </p>
     <Flex>
