@@ -33,12 +33,6 @@ export default ({ updateTheme }) => {
           <Styled.a>Page 3</Styled.a>
         </Link>
       </Styled.p>
-      <Styled.p>
-        go{" "}
-        <Link href="/p4" passHref>
-          <Styled.a>Page 4</Styled.a>
-        </Link>
-      </Styled.p>
       <button onClick={clicky}>Clicky</button>
       <button onClick={() => showModal(!modal)}>
         {modal ? "Hide" : "Show"} Modal
