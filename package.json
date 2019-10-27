@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/millette/tu.git"
+    "url": "git+https://github.com/millette/tu-2.git"
   },
   "license": "AGPL-3.0",
   "author": {
@@ -25,7 +25,7 @@
     "node": ">= 10.16.3"
   },
   "bugs": {
-    "url": "https://github.com/millette/tu/issues"
+    "url": "https://github.com/millette/tu-2/issues"
   },
   "healthier": {
     "parser": "babel-eslint",
@@ -42,7 +42,7 @@
       "plugin:react/recommended"
     ]
   },
-  "homepage": "https://github.com/millette/tu#readme",
+  "homepage": "https://github.com/millette/tu-2#readme",
   "lint-staged": {
     "*.{html,js,json,md,mdx}": [
       "prettier --write",
