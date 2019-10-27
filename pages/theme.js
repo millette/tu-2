@@ -7,10 +7,10 @@ import { jsx, useThemeUI, Styled } from "theme-ui"
 
 // self
 import Editor from "../components/ed"
-import Modal from "../components/modal"
+import DemoModal from "../components/demo-modal"
 
 export default ({ updateTheme }) => {
-  const [modal, showModal] = useState(false)
+  const [shown, showModal] = useState(false)
   const { theme } = useThemeUI()
 
   const clicky = () => {
@@ -34,17 +34,10 @@ export default ({ updateTheme }) => {
         </Link>
       </Styled.p>
       <button onClick={clicky}>Clicky</button>
-      <button onClick={() => showModal(!modal)}>
-        {modal ? "Hide" : "Show"} Modal
+      <button onClick={() => showModal(!shown)}>
+        {shown ? "Hide" : "Show"} Modal
       </button>
-      {modal && (
-        <Modal>
-          <Styled.p>
-            <button onClick={() => showModal(false)}>[X]</button>
-            Hello Modal
-          </Styled.p>
-        </Modal>
-      )}
+      <DemoModal shown={shown} close={() => showModal(false)} />
       <Editor onChange={updateTheme} json={theme} />
       <button sx={{ color: "white", bg: "primary" }}>A button</button>
     </div>
