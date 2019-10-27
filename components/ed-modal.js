@@ -8,7 +8,7 @@ const DemoModal = ({ onChange, json, shown = true, close = false }) => {
   if (!shown) return null
 
   const Editor = dynamic(
-    () => import("jsoneditor-react").then((mod) => mod.JsonEditor),
+    () => import("jsoneditor-react").then(({ JsonEditor }) => JsonEditor),
     {
       loading: () => <p>Initializing, one moment please</p>,
       ssr: false,
