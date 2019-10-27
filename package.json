@@ -4,6 +4,7 @@
   "description": "Theme-UI stuff...",
   "main": "index.js",
   "scripts": {
+    "analyze": "ANALYZE=true next build",
     "dev": "next",
     "build": "next build",
     "clean": "rm -fr out .next",
@@ -28,10 +29,7 @@
     "url": "https://github.com/millette/tu-2/issues"
   },
   "healthier": {
-    "parser": "babel-eslint",
-    "globals": [
-      "fetch"
-    ]
+    "parser": "babel-eslint"
   },
   "eslintConfig": {
     "rules": {
@@ -63,6 +61,7 @@
     "@emotion/core": "^10.0.22",
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@next/bundle-analyzer": "^9.1.1",
     "@next/mdx": "^9.1.1",
     "@theme-ui/presets": "^0.2.44",
     "@theme-ui/style-guide": "^0.2.44",
