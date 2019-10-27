@@ -15,28 +15,6 @@ const components = {
   ),
 }
 
-/*
-const sx = {
-  div: {
-    // bg: "black",
-    // color: "white",
-    // color: "background",
-    // bg: "primary",
-    position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    // margin: "auto",
-    width: "100vw",
-    height: "100vh",
-    boxShadow: "0 5px 10px 2px rgba(195,192,192,.5)",
-    // padding: "20px",
-    // textAlign: "center",
-  },
-}
-*/
-
 class MyApp extends App {
   constructor(props) {
     super(props)
