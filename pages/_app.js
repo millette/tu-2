@@ -54,7 +54,7 @@ class MyApp extends App {
     return (
       <ThemeProvider components={components} theme={this.state.theme}>
         <Head>
-          <link rel="stylesheet" href="/css/editor.min.css" />
+          <link rel="stylesheet" href="css/editor.min.css" />
         </Head>
         <ColorMode />
         <Styled.root>
