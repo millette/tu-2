@@ -18,14 +18,37 @@ const components = {
   ),
 }
 
+const drag = (ev) => {
+  const ball = ev.target
+
+  const onMouseMove = ({ pageX, pageY }) => {
+    ball.style.top = pageY - 5 + "px"
+    ball.style.left = pageX - 25 + "px"
+  }
+
+  if (ball.style.bottom) {
+    onMouseMove(ev)
+    ball.style.bottom = null
+    ball.style.right = null
+  }
+
+  document.addEventListener("mousemove", onMouseMove)
+
+  ball.onmouseup = () => {
+    document.removeEventListener("mousemove", onMouseMove)
+    ball.onmouseup = null
+  }
+}
+
 class MyApp extends App {
   constructor(props) {
     super(props)
     this.state = { theme }
     this.setTheme = (theme) => this.setState({ theme })
-    this.drag = this.drag.bind(this)
+    // this.drag = this.drag.bind(this)
   }
 
+  /*
   drag(ev) {
     const ball = ev.target
 
@@ -45,6 +68,7 @@ class MyApp extends App {
       ball.onmouseup = null
     }
   }
+  */
 
   render() {
     const { Component, pageProps } = this.props
@@ -58,9 +82,12 @@ class MyApp extends App {
           <Component {...pageProps} />
           <div
             zindex={1000}
-            onMouseDown={this.drag}
+            onMouseDown={drag}
             style={{
               position: "absolute",
+              maxWidth: "33vw",
+              maxHeight: "67vh",
+              overflowY: "hidden",
               bottom: 0,
               right: 0,
               border: "1rem solid green",
