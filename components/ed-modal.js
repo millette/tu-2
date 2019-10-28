@@ -6,16 +6,20 @@ import Modal from "./modal"
 
 const initString = "Initializing... One moment please"
 
-const DemoModal = ({ onChange, json, shown = true, close = false }) => {
+const EditModal = ({ onChange, json, shown = true, close = false }) => {
   if (!shown) return null
 
-  const Editor = dynamic(
+  let val = { ...json }
+  const onChange2 = (a) => (val = a)
+  const save = () => onChange(val)
+
+  const JsonEditor = dynamic(
     () => import("jsoneditor-react").then(({ JsonEditor }) => JsonEditor),
     {
       loading: () => (
         <p>
           {close ? (
-            <button focus onClick={close}>
+            <button autoFocus onClick={close}>
               {initString}
             </button>
           ) : (
@@ -29,10 +33,11 @@ const DemoModal = ({ onChange, json, shown = true, close = false }) => {
 
   return (
     <Modal>
-      {close && <button onClick={close}>[X]</button>}
-      <Editor onChange={onChange} value={json} />
+      <button onClick={save}>Apply changes (can't undo after)</button>
+      {close && <button onClick={close}>Cancel (can't undo after)</button>}
+      <JsonEditor history onChange={onChange2} value={json} />
     </Modal>
   )
 }
 
-export default DemoModal
+export default EditModal
