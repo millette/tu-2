@@ -6,6 +6,9 @@ import Modal from "./modal"
 
 const initString = "Initializing... One moment please"
 
+const style = { width: "50%" }
+// const style = {}
+
 const EditModal = ({ onChange, json, shown = true, close = false }) => {
   if (!shown) return null
 
@@ -33,8 +36,14 @@ const EditModal = ({ onChange, json, shown = true, close = false }) => {
 
   return (
     <Modal>
-      <button onClick={save}>Apply changes (can't undo after)</button>
-      {close && <button onClick={close}>Cancel (can't undo after)</button>}
+      <button style={style} onClick={save}>
+        Apply changes
+      </button>
+      {close && (
+        <button style={style} onClick={close}>
+          Cancel
+        </button>
+      )}
       <JsonEditor history onChange={onChange2} value={json} />
     </Modal>
   )
