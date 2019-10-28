@@ -8,6 +8,8 @@ const Modal = ({ children }) => {
     const el = document.createElement("div")
     const modalRoot = document.getElementById("modal")
     modalRoot.appendChild(el)
+    // wide enough to support history toolbar buttons
+    el.style.minWidth = "24rem"
     setElement(el)
     return () => modalRoot.removeChild(el)
   }, [])
