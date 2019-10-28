@@ -8,5 +8,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 module.exports = withBundleAnalyzer(
   withMDX({
     pageExtensions: ["js", "mdx"],
+    // assetPrefix: process.env.NODE_ENV === 'production' ? '/out' : '',
+    assetPrefix: process.env.NODE_ENV === "production" ? "/tu-2" : "",
   })
 )
