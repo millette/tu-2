@@ -64,13 +64,13 @@
     "@next/bundle-analyzer": "^9.1.1",
     "@next/mdx": "^9.1.1",
     "@theme-ui/presets": "^0.2.44",
-    "@theme-ui/style-guide": "^0.2.44",
+    "@theme-ui/style-guide": "^0.2.46",
     "get-best-contrast-color": "^0.3.1",
     "jsoneditor-react": "^2.0.0",
     "next": "^9.1.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "theme-ui": "^0.2.44"
+    "theme-ui": "^0.2.46"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
