@@ -7,6 +7,9 @@ import Head from "next/head"
 import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
 import { bootstrap as theme } from "@theme-ui/presets"
 
+// self
+import EditorModal from "../components/ed-modal"
+
 const components = {
   a: ({ children, href }) => (
     <Link href={href} passHref>
@@ -50,7 +53,7 @@ class MyApp extends App {
         </Head>
         <ColorMode />
         <Styled.root>
-          <Component {...pageProps} updateTheme={this.setTheme} />
+          <Component {...pageProps} />
           <div
             zindex={1000}
             onMouseDown={this.drag}
@@ -64,6 +67,8 @@ class MyApp extends App {
           >
             ED
           </div>
+
+          <EditorModal json={this.state.theme} onChange={this.setTheme} />
         </Styled.root>
         <style jsx>{`
           #modal:empty {
@@ -74,5 +79,18 @@ class MyApp extends App {
     )
   }
 }
+
+/*
+
+// <Component {...pageProps} updateTheme={this.setTheme} />
+
+
+shown={shown}
+close={() => showModal(false)}
+onChange={updateTheme}
+
+
+
+*/
 
 export default MyApp
