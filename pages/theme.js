@@ -6,7 +6,6 @@ import Link from "next/link"
 import { jsx, useThemeUI, Styled } from "theme-ui"
 
 // self
-// import Editor from "../components/ed-2"
 import EditorModal from "../components/ed-modal"
 
 export default ({ updateTheme }) => {
@@ -35,7 +34,7 @@ export default ({ updateTheme }) => {
       </Styled.p>
       <button onClick={clicky}>Clicky</button>
       <button onClick={() => showModal(!shown)}>
-        {shown ? "Hide" : "Show"} Modal
+        {shown ? "Cancel" : "Edit"}
       </button>
       <EditorModal
         shown={shown}
