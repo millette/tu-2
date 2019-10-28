@@ -5,9 +5,7 @@ import dynamic from "next/dynamic"
 import Modal from "./modal"
 
 const initString = "Initializing... One moment please"
-
 const style = { width: "50%" }
-// const style = {}
 
 const EditModal = ({ onChange, json, shown = true, close = false }) => {
   if (!shown) return null

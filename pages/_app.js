@@ -88,17 +88,4 @@ class MyApp extends App {
   }
 }
 
-/*
-
-// <Component {...pageProps} updateTheme={this.setTheme} />
-
-
-shown={shown}
-close={() => showModal(false)}
-onChange={updateTheme}
-
-
-
-*/
-
 export default MyApp
