@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "next build",
     "clean": "rm -fr out .next",
-    "deploy": "gh-pages -d out",
+    "deploy": ">out/.nojekyll && gh-pages -t -d out",
     "export": "next export",
     "healthier": "healthier",
     "start": "next start"
