@@ -29,16 +29,18 @@ class MyApp extends App {
   drag(ev) {
     const ball = ev.target
 
-    function onMouseMove({ pageX, pageY }) {
-      ball.style.left = pageX + "px"
-      ball.style.top = pageY + "px"
+    const onMouseMove = ({ pageX, pageY }) => {
+      ball.style.top = pageY - 10 + "px"
+      ball.style.left = pageX - 10 + "px"
     }
 
-    // (3) move the ball on mousemove
+    onMouseMove(ev)
+    ball.style.bottom = null
+    ball.style.right = null
+
     document.addEventListener("mousemove", onMouseMove)
 
-    // (4) drop the ball, remove unneeded handlers
-    ball.onmouseup = function() {
+    ball.onmouseup = () => {
       document.removeEventListener("mousemove", onMouseMove)
       ball.onmouseup = null
     }
@@ -59,8 +61,8 @@ class MyApp extends App {
             onMouseDown={this.drag}
             style={{
               position: "absolute",
-              top: 50,
-              left: 50,
+              bottom: 0,
+              right: 0,
               border: "1rem solid green",
             }}
             id="modal"
