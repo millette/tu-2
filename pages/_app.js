@@ -21,22 +21,14 @@ class MyApp extends App {
     this.state = { theme }
     this.setTheme = (theme) => this.setState({ theme })
     this.drag = this.drag.bind(this)
-    this.drag2 = this.drag2.bind(this)
   }
 
   drag(ev) {
-    // console.log('Dragging...', ev.target)
-    // ev.preventDefault()
-
     const ball = ev.target
 
-    function moveAt(pageX, pageY) {
+    function onMouseMove({ pageX, pageY }) {
       ball.style.left = pageX + "px"
       ball.style.top = pageY + "px"
-    }
-
-    function onMouseMove(event) {
-      moveAt(event.pageX, event.pageY)
     }
 
     // (3) move the ball on mousemove
@@ -47,11 +39,6 @@ class MyApp extends App {
       document.removeEventListener("mousemove", onMouseMove)
       ball.onmouseup = null
     }
-  }
-
-  drag2(ev) {
-    console.log("Dragging2...", ev)
-    ev.preventDefault()
   }
 
   render() {
