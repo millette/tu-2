@@ -8,6 +8,7 @@
     "dev": "next",
     "build": "next build",
     "clean": "rm -fr out .next",
+    "deploy": "gh-pages -d out",
     "export": "next export",
     "healthier": "healthier",
     "start": "next start"
@@ -74,6 +75,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "gh-pages": "^2.1.1",
     "healthier": "^3.2.0",
     "husky": "^2.7.0",
     "lint-staged": "^9.4.2",
