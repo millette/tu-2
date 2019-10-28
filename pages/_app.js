@@ -43,32 +43,11 @@ const drag = (ev) => {
 class MyApp extends App {
   constructor(props) {
     super(props)
-    this.state = { theme }
+    this.state = { theme, shown: false }
     this.setTheme = (theme) => this.setState({ theme })
-    // this.drag = this.drag.bind(this)
+    this.toggle = () => this.setState(({ shown }) => ({ shown: !shown }))
+    this.close = () => this.setState({ shown: false })
   }
-
-  /*
-  drag(ev) {
-    const ball = ev.target
-
-    const onMouseMove = ({ pageX, pageY }) => {
-      ball.style.top = pageY - 10 + "px"
-      ball.style.left = pageX - 10 + "px"
-    }
-
-    onMouseMove(ev)
-    ball.style.bottom = null
-    ball.style.right = null
-
-    document.addEventListener("mousemove", onMouseMove)
-
-    ball.onmouseup = () => {
-      document.removeEventListener("mousemove", onMouseMove)
-      ball.onmouseup = null
-    }
-  }
-  */
 
   render() {
     const { Component, pageProps } = this.props
@@ -84,26 +63,26 @@ class MyApp extends App {
             zindex={1000}
             onMouseDown={drag}
             style={{
+              background: "white",
               position: "absolute",
               maxWidth: "33vw",
               maxHeight: "67vh",
               overflowY: "hidden",
               bottom: 0,
               right: 0,
-              border: "1rem solid green",
+              border: "0.5rem dotted green",
             }}
             id="modal"
           >
-            ED
+            {!this.state.shown && <button onClick={this.toggle}>Editor</button>}
           </div>
-
-          <EditorModal json={this.state.theme} onChange={this.setTheme} />
+          <EditorModal
+            close={this.close}
+            shown={this.state.shown}
+            json={this.state.theme}
+            onChange={this.setTheme}
+          />
         </Styled.root>
-        <style jsx>{`
-          #modal:empty {
-            display: none;
-          }
-        `}</style>
       </ThemeProvider>
     )
   }
