@@ -5,7 +5,7 @@ import App from "next/app"
 import Link from "next/link"
 import Head from "next/head"
 import { jsx, ThemeProvider, Styled, ColorMode } from "theme-ui"
-import { bootstrap as theme } from "@theme-ui/presets"
+// import { bootstrap as theme } from "@theme-ui/presets"
 
 // self
 import EditorModal from "../components/ed-modal"
@@ -43,7 +43,7 @@ const drag = (ev) => {
 class MyApp extends App {
   constructor(props) {
     super(props)
-    this.state = { theme, shown: false }
+    this.state = { theme: {}, shown: false }
     this.setTheme = (theme) => this.setState({ theme })
     this.toggle = () => this.setState(({ shown }) => ({ shown: !shown }))
     this.close = () => this.setState({ shown: false })
@@ -65,8 +65,8 @@ class MyApp extends App {
             style={{
               background: "white",
               position: "absolute",
-              maxWidth: "33vw",
-              maxHeight: "67vh",
+              // maxWidth: "33vw",
+              // maxHeight: "67vh",
               overflowY: "hidden",
               bottom: 0,
               right: 0,
