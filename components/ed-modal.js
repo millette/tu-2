@@ -1,11 +1,12 @@
 // npm
 import dynamic from "next/dynamic"
+import * as themes from "@theme-ui/presets"
 
 // self
 import Modal from "./modal"
 
 const initString = "Initializing... One moment please"
-const style = { width: "50%" }
+const style = { flex: "auto" }
 
 const EditModal = ({ onChange, json, shown = true, close = false }) => {
   if (!shown) return null
@@ -34,14 +35,16 @@ const EditModal = ({ onChange, json, shown = true, close = false }) => {
 
   return (
     <Modal>
-      <button style={style} onClick={save}>
-        Apply changes
-      </button>
-      {close && (
-        <button style={style} onClick={close}>
-          Cancel
+      <div style={{ display: "flex" }}>
+        <button style={style} onClick={save}>
+          Apply changes
         </button>
-      )}
+        {close && (
+          <button style={style} onClick={close}>
+            Cancel
+          </button>
+        )}
+      </div>
       <JsonEditor history onChange={onChange2} value={json} />
     </Modal>
   )
