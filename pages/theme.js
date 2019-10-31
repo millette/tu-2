@@ -1,9 +1,10 @@
 /** @jsx jsx */
 
 // npm
-import { useState } from "react"
+// import { useState } from "react"
 import Link from "next/link"
-import { jsx, useThemeUI, Styled } from "theme-ui"
+// import { jsx, useThemeUI, Styled } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 
 // self
 // import EditorModal from "../components/ed-modal"
