@@ -65,12 +65,12 @@
     "@next/bundle-analyzer": "^9.1.3",
     "@next/mdx": "^9.1.3",
     "@theme-ui/presets": "^0.2.44",
-    "@theme-ui/style-guide": "^0.2.46",
+    "@theme-ui/style-guide": "^0.2.49",
     "jsoneditor-react": "^2.0.0",
     "next": "^9.1.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "theme-ui": "^0.2.46"
+    "theme-ui": "^0.2.49"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
